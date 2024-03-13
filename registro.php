@@ -9,8 +9,12 @@
 </head>
 
 <body>
-    <h1 class="login">Login</h1>
-
+    <header>
+<img src="" alt="">
+    </header>
+    <div>
+    <h1 class="login">Registro</h1>
+    </div>
     <form class="formulario" action="registro.php" method="post"></form>
     <input type="tex" name="Usuario" placeholder="Ingrese un usuario ">
     <input type="password" name="Contraseña" placeholder="Ingrese su contraaseña">
