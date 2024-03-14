@@ -1,25 +1,90 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    
-}
-body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-.login{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-}
-input[type="tex"],input[type="password"], input[type="confirmacion"]{
-    outline: none;
-    padding: 20px;
-    display:block;
-    width: 400px;
-    border-radius: 4px;
-    border: 2px solid gray;
-    margin: 30px auto;
 
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.formulario {
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+    padding: 50px 35px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+}
+
+.formulario h2 {
+    font-size: 30px;
+    color: rgb(231, 22, 22);
+    margin-bottom: 30px;
+
+}
+
+.usuario {
+    position: relative;
+    width: 300px;
+    margin-bottom: 35px;
+}
+
+input {
+    color: rgb(7, 0, 0);
+    padding: 20px 15px 20px 60px;
+    width: 100%;
+    border-radius: 25px;
+    border: 0;
+    box-shadow: 0 0 20px rgba(192, 203, 251, 0.7);
+    outline: none;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: rgb(63, 42, 83);
+}
+
+.label {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor {
+    display: flex;
+    /* Utilizamos Flexbox para posicionar los elementos */
+    align-items: center;
+    /* Centramos verticalmente los elementos */
+}
+
+.logo {
+
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    left: 20px;
+    top: 50%;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    display: inline-block;
+
+}
+
+.boton{
+    padding: 20px;
+    background: linear-gradient(
+        90deg,
+        rgb(138, 135, 137),
+        rgb(54, 54, 54)
+    );
 }

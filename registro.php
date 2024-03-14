@@ -9,18 +9,39 @@
 </head>
 
 <body>
-    <header>
-<img src="" alt="">
-    </header>
-    <div>
-    <h1 class="login">Registro</h1>
-    </div>
-    <form class="formulario" action="registro.php" method="post"></form>
-    <input type="tex" name="Usuario" placeholder="Ingrese un usuario ">
-    <input type="password" name="Contraseña" placeholder="Ingrese su contraaseña">
-    <input type="confirmacion" name="confrimación" placeholder="Confirrme su contraseña">
-    <input type="Enviar" value="Enviar">
-   
+
+
+    <form class="formulario" method="post">
+        <div class="contenedor">
+            <img class="logo" src="img/logo2.jpg" alt="logo">
+            <h1>Ordenadores HOP</h1>
+
+        </div>
+        <h2>Registro</h1>
+
+
+            <?php
+
+            ?>
+
+            <div class="usuario">
+                <label class="label" for="">Usuario</label>
+                <input type="tex" name="usuario" placeholder="Ingrese un usuario ">
+            </div>
+            <div class="usuario">
+                <label class="label" for="">Contraseña</label>
+                <input type="password" name="contraseña" placeholder="Ingrese su contraseña">
+            </div>
+            <div class="usuario">
+                <label class="label" for="">Confirmar_contraseña</label>
+                <input type="confirmacion" name="confrimación" placeholder="Confirrme su contraseña">
+            </div>
+
+            <input class="boton" type="submit" value="registrar" name="registro">
+
+
+    </form>
+
 </body>
 
 </html>
