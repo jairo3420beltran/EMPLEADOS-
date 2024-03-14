@@ -1,4 +1,11 @@
 <?php 
-$conexion= mysqli_connect("localhost", "root","","db_usuarios","3306");
-$conexion->set_charset("utf8");
+conexion ();
+function conexion(){
+    $server = 'localhost';
+    $user='root';
+    $pass= '';
+    $db='db_usuarios';
+    $conectar=mysqli_connect($server,$user,$pass, $db) or die("Error en la conexion");
+    return $conectar;
+}
 ?>
