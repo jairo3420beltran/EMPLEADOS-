@@ -1,5 +1,5 @@
 <?php 
-
+include("database.php");
 
 
 
@@ -16,7 +16,7 @@ if (isset($_POST["registro"])){
    
      $consulta="INSERT INTO registro (usuario,contraseña,confir_contraseña)
      VALUES ('$usuario','$contraseña', '$confirmar')";
-     $resultado= mysqli_query($conexion, $consulta);
+     $resultado= mysqli_query($conex, $consulta);
 
 
      if($resultado){
