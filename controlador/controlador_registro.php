@@ -1,16 +1,37 @@
 <?php 
-if (!empaty($_POST["registro"])){
+include("database.php");
 
-    if (empty($_POST["usuario"]) or empty($_POST["contraseña"]) or empty($_POST["confirmacion"]) ){
-        echo'rellene todos los campos ';
-    }else{
-        $usuario=$_POST["usuario"];
-        $contraseña=$_POST["contraseña"];
-        $confirmar=$_POST["confirmacion"];
-        $sql=$conexion->query("insert into registro (usuario, contraseña, confirmar_contraseña) values('$usuario', '$contraseña','$confirmar')");
-        if($sql==1){
-        echo'usuario registrado satisfactoriamente';    
-        }
-    }
+
+if (isset($_POST["registro"])){
+
+   if(
+    strlen($_POST["usuario"])>= 1&&
+    strlen($_POST["contraseña"])>= 1&&
+    strlen($_POST["confirmacion"])>= 1
+   ){
+     $usuario=trim($_POST["usuario"]);
+     $contraseña=trim($_POST["contraseña"]);
+     $confirmar=trim($_POST["confirmacion"]);
+   
+     $consulta="INSERT INTO registro (usuario,contraseña,confir_contraseña)
+     VALUES ('$usuario','$contraseña', '$confirmar')";
+     $resultado= mysqli_query($conexion, $consulta);
+
+
+     if($resultado){
+       ?>
+            <h3 class="subtitle">Tu registro se a completado</h3>
+       <?php
+     }else{
+        ?>
+            <h3 class="error">Ocurrio un error</h3>
+        <?php
+     }
+
+   } else{
+        ?>
+            <h3 class="error">Llena todos los campos </h3>
+        <?php
+   }
 }
 ?>

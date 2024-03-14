@@ -34,14 +34,17 @@
             </div>
             <div class="usuario">
                 <label class="label" for="">Confirmar_contraseña</label>
-                <input type="confirmacion" name="confrimación" placeholder="Confirrme su contraseña">
+                <input type="confirmacion" name="confirmacion" placeholder="Confirrme su contraseña">
             </div>
 
             <input class="boton" type="submit" value="registrar" name="registro">
 
 
     </form>
+<?php 
 
+
+?>
 </body>
 
 </html>
