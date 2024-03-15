@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("control.php");
 
 ?>
@@ -43,7 +43,7 @@ include("control.php");
             </div>
 
             <input class="boton" type="submit" value="registrar" name="registro">
-
+            <a href="index.php">SALIR</a>
 
     </form>
 
