@@ -2,7 +2,7 @@
 
 if(!empty($_POST["btnregistrar"])){
     if (!empty($_POST["nombres"])and !empty($_POST["identificacion"]) and !empty($_POST["telefono"]) and
-!empty($_POST["address"]) and !empty($_POST["edad"]) and !empty($_POST["Fecha"]) and !empty($_POST["cargo"]) and
+!empty($_POST["address"]) and !empty($_POST["edad"]) and !empty($_POST["fecha"]) and !empty($_POST["cargo"]) and
 !empty($_POST["estado"] ) and !empty($_POST["correo"] ) and !empty($_POST["sexo"] ))
 {
     $nombres=$_POST["nombres"];
@@ -17,8 +17,8 @@ if(!empty($_POST["btnregistrar"])){
     $sexo=$_POST["sexo"];
 
     $sql=$conex->query("insert into perfil (Nombres, Cedula, Telefono, Direccion, Edad, Fecha_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
-    values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo')
-    '$estado', '$correo'. '$Sexo'");
+    values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',)
+    '$estado', '$correo', '$sexo'");
 
     if($sql==1){
         echo '<div class="alert alert-success">Persona registrada correctamente</div> ';
