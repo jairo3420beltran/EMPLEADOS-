@@ -26,7 +26,6 @@
             <h2 class="text-center text-secondary">Perfil de usuario</h2>
 
                 <?php
-                    include("database.php");
                     include("controlPerfil.php");
                 ?>
 
@@ -44,7 +43,7 @@
                 <input type="text" class="form-control" name="telefono" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="direccion" class="form-label">Dirección</label>
+                <label for="direccion" class="form-label">Direccion</label>
                 <input type="text" class="form-control" name="address" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
@@ -79,8 +78,9 @@
             <table class="table">
                 <thead class="bg-info">
                     <tr>
+                        
                         <th scope="col">id_usuario</th>
-                        <th scope="col">Nombres</th>
+                        <th scope="col">nombres</th>
                         <th scope="col">Cedula</th>
                         <th scope="col">Telefono</th>
                         <th scope="col">Direccion</th>
@@ -97,18 +97,18 @@
 
                     <?php
                     include("database.php");
-                    $sql = $conex->query("select *from perfil");
+                    $sql = $conex->query("select * from perfil");
                     while ($datos=$sql->fetch_object()) { ?>
                         
                     <tr>
                         <td><?=$datos->id_usuario?></td>
-                        <td><?=$datos->Nombres?></td>
+                        <td><?=$datos->nombres?></td>
                         <td><?=$datos->Cedula?></td>
                         <td><?=$datos->Telefono?></td>
                         <td><?=$datos->Direccion?></td>
                         <td><?=$datos->Edad?></td>
-                        <td><?=$datos->Fecha_Nacimiento?></td>
-                        <td><?=$datos->cargo?></td>
+                        <td><?=$datos->F_Nacimiento?></td>
+                        <td><?=$datos->Cargo?></td>
                         <td><?=$datos->Estado_Civil?></td>
                         <td><?=$datos->Correo?></td>
                         <td><?=$datos->Sexo?></td>

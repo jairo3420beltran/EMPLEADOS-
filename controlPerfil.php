@@ -1,4 +1,5 @@
 <?php
+include("database.php");
 
 if(!empty($_POST["btnregistrar"])){
     if (!empty($_POST["nombres"])and !empty($_POST["identificacion"]) and !empty($_POST["telefono"]) and
@@ -16,21 +17,27 @@ if(!empty($_POST["btnregistrar"])){
     $correo=$_POST["correo"];
     $sexo=$_POST["sexo"];
 
-    $sql=$conex->query("insert into perfil (Nombres, Cedula, Telefono, Direccion, Edad, Fecha_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
-    values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',)
-    '$estado', '$correo', '$sexo'");
+    // $sql=$conex->query("insert into perfil (Nombres, Cedula, Telefono, Direccion, Edad, Fecha_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
+    // values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',)
+    // '$estado', '$correo', '$sexo'");
 
-    if($sql==1){
+    $sql="insert into perfil (nombres,Cedula, Telefono, Direccion, Edad, F_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
+    values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',
+    '$estado', '$correo', '$sexo')";
+
+    $result = $conex->query($sql);
+
+    if($result){
         echo '<div class="alert alert-success">Persona registrada correctamente</div> ';
     }else{
         echo '<div class="alert alert-danger">Error al registrar</div> ';
     }
 
-
-
 }else{
     echo '<div class="alert alert-warning">Alguno de los campos está vacio </div> ';
 }
+
+
 
 }
 ?>
