@@ -1,86 +1,60 @@
 <?php
 include ("database.php");
 
+function response($code=200, $status="", $message="") 
+{
+ http_response_code($code);
+ if( !empty($status) && !empty($message) )
+    {
+     $response = array("status" => $status ,"message"=>$message);  
+     echo json_encode($response,JSON_PRETTY_PRINT);    
+     } 
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+  $usuario = $_POST["usuario"];
+  $contraseña = $_POST["contraseña"];
+  $confirmacion = $_POST["confirmacion"];
 
 
-if (isset ($_POST["registro"])) {
+  // Validaciones
+  $longitud_minima = 8;
 
-  if (
-    strlen($_POST["usuario"]) >= 1 &&
-    strlen($_POST["contraseña"]) >= 1
-    
-  ) {
-    $usuario = trim($_POST["usuario"]);
-    $contraseña = trim($_POST["contraseña"]);
-    
+  $error_usuario = "";
+  $error_contraseña = "";
+  $error_match_contraseña = "";
 
+  // Verificar longitud mínima
+  if (strlen($contraseña) < $longitud_minima) {
+    $error_contraseña = "La contraseña debe tener al menos {$longitud_minima} caracteres.";
+  }
+
+  if (strcmp($contraseña,$confirmacion) != 0) {
+    $error_match_contraseña = "La contraseña no es igual";
+
+  }
+
+  if(strlen($usuario) <= 4){
+    $error_usuario = "El usuario debe tener  minimo 4 caracteres";
+  }
+
+  if (strlen($error_usuario) == 0 and strlen($error_contraseña) == 0 and strlen($error_match_contraseña) == 0) {
     $consulta = "INSERT INTO registro (usuario,contraseña)
-     VALUES ('$usuario','$contraseña')";
+  VALUES ('$usuario','$contraseña')";
     $resultado = mysqli_query($conex, $consulta);
 
 
     if ($resultado) {
-      echo '<div class="alert alert-success">Persona registrada correctamente</div> ';
+    $res= array("password" => $error_contraseña ,"user"=>$error_usuario,"match_password"=>$error_match_contraseña);
+      response(200,"good",json_encode($res,JSON_PRETTY_PRINT));
     } else {
-      echo '<div class="alert alert-danger">Error al registrar</div> ';
+response(400,"error","imposible");
     }
-
   } else {
-    echo '<div class="alert alert-warning">Alguno de los campos está vacio </div> ';
+    $res= array("password" => $error_contraseña ,"user"=>$error_usuario,"match_password"=>$error_match_contraseña);
+response(400,"error",json_encode($res,JSON_PRETTY_PRINT));
   }
-
-
-
-  
-  
-  
-  $contrasena = $_POST['contrasena'];
-  
-  // Validaciones
-  $longitud_minima = 8;
-  $requiere_mayusculas = true;
-  $requiere_minusculas = true;
-  $requiere_numeros = true;
-  $requiere_caracteres_especiales = true;
-  
-  $errores = [];
-  
-  // Verificar longitud mínima
-  if (strlen($contrasena) < $longitud_minima) {
-      $errores[] = "La contraseña debe tener al menos {$longitud_minima} caracteres.";
-  }
-  
-  // Verificar si se requieren mayúsculas
-  if ($requiere_mayusculas && !preg_match('/[A-Z]/', $contrasena)) {
-      $errores[] = "La contraseña debe contener al menos una letra mayúscula.";
-  }
-  
-  // Verificar si se requieren minúsculas
-  if ($requiere_minusculas && !preg_match('/[a-z]/', $contrasena)) {
-      $errores[] = "La contraseña debe contener al menos una letra minúscula.";
-  }
-  
-  // Verificar si se requieren números
-  if ($requiere_numeros && !preg_match('/[0-9]/', $contrasena)) {
-      $errores[] = "La contraseña debe contener al menos un número.";
-  }
-  
-  // Verificar si se requieren caracteres especiales
-  if ($requiere_caracteres_especiales && !preg_match('/[^a-zA-Z0-9]/', $contrasena)) {
-      $errores[] = "La contraseña debe contener al menos un carácter especial.";
-  }
-  
-  // Mostrar errores si los hay
-  if (!empty($errores)) {
-      foreach ($errores as $error) {
-          echo $error . "<br>";
-      }
-  } else {
-      // La contraseña es válida
-      echo "La contraseña es válida.";
-  }
-  
-  
-
+} else {
+  response(400);
 }
 ?>

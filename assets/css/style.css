@@ -29,6 +29,13 @@ body {
     margin-bottom: 30px;
 
 }
+#salir {
+display: none;
+}
+
+#salir.display{
+    display: initial;
+}
 
 .usuario {
     position: relative;
