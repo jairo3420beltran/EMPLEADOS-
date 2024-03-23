@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,15 +8,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
+    
     <form class="formulario" id="formulario">
+        
         <div class="contenedor">
             <img class="logo" src="img/logo2.jpg" alt="logo">
             <h1>Ordenadores HOP</h1>
@@ -34,8 +40,9 @@
                 <input type="password" name="confirmacion" id="confirmar" placeholder="Confirrme su contraseña">
                 <p id="error_confirmar"></p>
             </div>
-            <button class="boton" id="submit" type="button">registrar</button>
-            <a href="index.php" id="salir">SALIR</a>
+            <button class$btn-border-radius: 1rem; class="boton" id="submit" type="button">registrar</button>
+            <a class="btn" href="index.php">Ingresar</a>
+
     </form>
     <script defer>
         const boton = document.querySelector("#submit")
