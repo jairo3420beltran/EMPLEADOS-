@@ -113,7 +113,7 @@
                         <td><?=$datos->Correo?></td>
                         <td><?=$datos->Sexo?></td>
                         <td>
-                            <a href="" class="btn btn-small btn-dark"><i class="fa-solid fa-file-pen"></i></a>
+                            <a href="modificar_registro.php" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                             <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>

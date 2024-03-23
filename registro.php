@@ -45,6 +45,9 @@ include("control.php");
             <input class="boton" type="submit" value="registrar" name="registro">
             <a href="index.php">SALIR</a>
 
+            
+
+
     </form>
 
 </body>
