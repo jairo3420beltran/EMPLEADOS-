@@ -1,7 +1,7 @@
 <?php
 include "database.php";
 $id_usuario = $_GET["id_usuario"];
-$sql=$conex->query("select * from perfil where perfil=$id_usuario")
+$sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
 ?>
 
 <!DOCTYPE html>
@@ -32,48 +32,51 @@ $sql=$conex->query("select * from perfil where perfil=$id_usuario")
             <?php
         
         while ($datos = $sql->fetch_object()) {
-
-             <div class="mb-3">
-                <label for="nombres" class="form-label">Nombres y Apellidos</label>
-                <input type="text" class="form-control" name="nombres" aria-describedby="emailHelp" values="<?= $datos->nombres?>">
+            echo "
+             <div class='mb-3'>
+                <label for='nombres' class='form-label'>Nombres y Apellidos</label>
+                <input type='text' class='form-control' name='nombres' aria-describedby='emailHelp' value='$datos->nombres'>
             </div>
-            <div class="mb-3">
-                <label for="identificacion" class="form-label">Cedula</label>
-                <input type="text" class="form-control" name="identificacion" aria-describedby="emailHelp"values="<?= $datos->identificacion?>">
+            <div class='mb-3'>
+                <label for='identificacion' class='form-label'>Cedula</label>
+                <input type='text' class='form-control' name='identificacion' aria-describedby='emailHelp'value='$datos->Cedula'>
             </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" name="telefono" aria-describedby="emailHelp"values="<?= $datos->telefono?>">
+            <div class='mb-3'>
+                <label for='telefono' class='form-label'>Teléfono</label>
+                <input type='text' class='form-control' name='telefono' aria-describedby='emailHelp'value='$datos->Telefono'>
             </div>
-            <div class="mb-3">
-                <label for="direccion" class="form-label">Direccion</label>
-                <input type="text" class="form-control" name="address" aria-describedby="emailHelp"values="<?= $datos->address?>">
+            <div class='mb-3'>
+                <label for='direccion' class='form-label'>Direccion</label>
+                <input type='text' class='form-control' name='address' aria-describedby='emailHelp'value='$datos->Direccion'>
             </div>
-            <div class="mb-3">
-                <label for="edad" class="form-label">Edad</label>
-                <input type="text" class="form-control" name="edad" aria-describedby="emailHelp"values="<?= $datos->edad?>">
+            <div class='mb-3'>
+                <label for='edad' class='form-label'>Edad</label>
+                <input type='text' class='form-control' name='edad' aria-describedby='emailHelp'value='$datos->Edad'>
             </div>
-            <div class="mb-3">
-                <label for="nombres" class="form-label">Fecha de Nacimiento </label>
-                <input type="date" class="form-control" name="fecha" aria-describedby="emailHelp"values="<?= $datos->fecha?>">
+            <div class='mb-3'>
+                <label for='nombres' class='form-label'>Fecha de Nacimiento </label>
+                <input type='date' class='form-control' name='fecha' aria-describedby='emailHelp'value='$datos->F_Nacimiento'>
             </div>
-            <div class="mb-3">
-                <label for="cargo" class="form-label">Cargo</label>
-                <input type="text" class="form-control" name="cargo" aria-describedby="emailHelp"values="<?= $datos->cargo?>">
+            <div class='mb-3'>
+                <label for='cargo' class='form-label'>Cargo</label>
+                <input type='text' class='form-control' name='cargo' aria-describedby='emailHelp'value='$datos->Cargo'>
             </div>
-            <div class="mb-3">
-                <label for="estado" class="form-label">Estado civil</label>
-                <input type="text" class="form-control" name="estado" aria-describedby="emailHelp"values="<?= $datos->estado?>">
+            <div class='mb-3'>
+                <label for='estado' class='form-label'>Estado civil</label>
+                <input type='text' class='form-control' name='estado' aria-describedby='emailHelp'value='$datos->Estado_Civil'>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="correo" aria-describedby="emailHelp"values="<?= $datos->correo?>">
+            <div class='mb-3'>
+                <label for='email' class='form-label'>Email</label>
+                <input type='email' class='form-control' name='correo' aria-describedby='emailHelp'value='$datos->Correo'>
             </div>
-            <div class="mb-3">
-                <label for="sexo" class="form-label">Sexo</label>
-                <input type="text" class="form-control" name="sexo" aria-describedby="emailHelp"values="<?= $datos->sexo?>">
+            <div class='mb-3'>
+                <label for='sexo' class='form-label'>Sexo</label>
+                <input type='text' class='form-control' name='sexo' aria-describedby='emailHelp'value='$datos->Sexo'>
             </div> 
+            ";
         }
+
+            ?>
 
             
 
