@@ -68,6 +68,7 @@
             <div class="mb-3">
                 <label for="estado" class="form-label">Estado civil</label>
                 <input type="text" class="form-control" id="control" name="estado" aria-describedby="emailHelp">
+                            
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -80,14 +81,14 @@
                 <datalist id="datalistOptions">
                 <option value="Masculino">
                 <option value="Femenino">
-                <option value="No Definido">
+                <option value="Binario">
 
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
         </form>
 
-        <div class="col-8 p-4">
+        <div class="col-1 p-2">
             <table class="table table-striped">
                 <thead class="bg-info">
                     <tr>
