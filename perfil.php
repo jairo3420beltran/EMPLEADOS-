@@ -14,6 +14,13 @@
 </head>
 
 <body>
+    <script>
+        function eliminar(params) {
+            var respuesta=confirm("Deseas Eliminar")
+            return respuesta
+        }
+    </script>
+
     <div>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle" width="250 " alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto">Ordenadores HOP </h1>
@@ -128,7 +135,7 @@
                         <td><?=$datos->Sexo?></td>
                         <td>
                             <a href="modificar_registro.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
-                            <a href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <a onclick="return eliminar()" href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
 
