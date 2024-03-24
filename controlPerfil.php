@@ -4,7 +4,7 @@ include("database.php");
 if(!empty($_POST["btnregistrar"])){
     if (!empty($_POST["nombres"])and !empty($_POST["identificacion"]) and !empty($_POST["telefono"]) and
 !empty($_POST["address"]) and !empty($_POST["edad"]) and !empty($_POST["fecha"]) and !empty($_POST["cargo"]) and
-!empty($_POST["estado"] ) and !empty($_POST["correo"] ) and !empty($_POST["sexo"] ))
+!empty($_POST["estado"] ) and !empty($_POST["correo"] ) and !empty($_POST["sexo"]) and  $_FILES["imagen"]["size"] < 3000000)
 {
     $nombres=$_POST["nombres"];
     $identificacion=$_POST["identificacion"];
@@ -17,13 +17,13 @@ if(!empty($_POST["btnregistrar"])){
     $correo=$_POST["correo"];
     $sexo=$_POST["sexo"];
 
-    // $sql=$conex->query("insert into perfil (Nombres, Cedula, Telefono, Direccion, Edad, Fecha_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
-    // values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',)
-    // '$estado', '$correo', '$sexo'");
+    $foto=$_FILES["imagen"]['tmp_name'];
+    $img = file_get_contents($foto); 
+    $data = base64_encode($img); 
 
-    $sql="insert into perfil (nombres,Cedula, Telefono, Direccion, Edad, F_Nacimiento, Cargo, Estado_Civil, Correo, Sexo) 
+    $sql="insert into perfil (nombres,Cedula, Telefono, Direccion, Edad, F_Nacimiento, Cargo, Estado_Civil, Correo, Sexo, foto) 
     values('$nombres','$identificacion','$telefono', '$direccion', '$edad', '$fechaNacimiento', '$cargo',
-    '$estado', '$correo', '$sexo')";
+    '$estado', '$correo', '$sexo', '$data')";
 
     $result = $conex->query($sql);
 

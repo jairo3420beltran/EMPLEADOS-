@@ -22,17 +22,20 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
     <div>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle mx-auto d-block" width="250" alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto m-auto">Ordenadores HOP </h1>
-
     </div>
-
 </head>
 <body>
-<form class="col-4 p-10 m-auto" method="POST">
+<form class="col-4 p-10 m-auto" method="POST" action="actualizar_registro.php">
             <h2 class="text-center text-secondary">Modificar perfil de usuario</h2>
             <?php
-        
         while ($datos = $sql->fetch_object()) {
-            echo "
+            if (isset($_GET['id_usuario'])) {
+                
+                $id=$_GET['id_usuario'];
+                echo "
+            <div style='display:none;'>
+            <input type='text' class='form-control' name='id' aria-describedby='emailHelp' value='$id'>
+        </div>
              <div class='mb-3'>
                 <label for='nombres' class='form-label'>Nombres y Apellidos</label>
                 <input type='text' class='form-control' name='nombres' aria-describedby='emailHelp' value='$datos->nombres'>
@@ -66,20 +69,25 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
                 <input type='text' class='form-control' name='estado' aria-describedby='emailHelp'value='$datos->Estado_Civil'>
             </div>
             <div class='mb-3'>
-                <label for='email' class='form-label'>Email</label>
-                <input type='email' class='form-control' name='correo' aria-describedby='emailHelp'value='$datos->Correo'>
+            <label for='email' class='form-label'>Email</label>
+            <input type='email' class='form-control' name='correo' aria-describedby='emailHelp'value='$datos->Correo'>
             </div>
             <div class='mb-3'>
-                <label for='sexo' class='form-label'>Sexo</label>
-                <input type='text' class='form-control' name='sexo' aria-describedby='emailHelp'value='$datos->Sexo'>
+            <label for='sexo' class='form-label'>Sexo</label>
+            <input type='text' class='form-control' name='sexo' aria-describedby='emailHelp'value='$datos->Sexo'>
+            </div> 
+            <div class='mb-3'>
+            <img src='data:image/png;base64,$datos->foto'/>
+            <input type='file' class='form-control' id='img' name='imagen' aria-describedby='emailHelp' accept='image/*'>
             </div> 
             ";
         }
-
-            ?>
-
-            
-
+        else {
+            header('Location: perfil.php');
+    
+        }
+    }
+        ?>
             <button type="submit" class="btn btn-primary" name="btnmodificar" value="OK">MODIFICAR</button>
         </form>
 

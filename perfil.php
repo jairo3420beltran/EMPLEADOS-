@@ -15,6 +15,7 @@
 
 <body>
     <div>
+        <a clas="salir" href="index.php">SALIR</a>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle" width="250 " alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto">Ordenadores HOP </h1>
 
@@ -22,7 +23,7 @@
 
 
     <div class="container-fluid row">
-        <form class="col-4" method="POST">
+        <form class="col-4" method="POST" enctype="multipart/form-data">
             <h2 class="text-center text-secondary">Perfil de usuario</h2>
 
                 <?php
@@ -38,12 +39,7 @@
                 <label for="identificacion" class="form-label ">Cedula</label>
                 <input type="text" class="form-control " name="identificacion" aria-describedby="emailHelp">
             </div>
-            <!-- <div class="mb-3">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control"id="control" name="telefono" aria-describedby="emailHelp">
-                <label for="identificacion" class="form-label">Cedula</label>
-                <input type="number" class="form-control" name="identificacion" >
-            </div> -->
+          
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
                 <input type="number" class="form-control" name="telefono" aria-describedby="emailHelp">
@@ -54,7 +50,6 @@
             </div>
             <div class="mb-3">
                 <label for="edad" class="form-label">Edad</label>
-                <!-- <input type="text" class="form-control" id="control" name="edad" aria-describedby="emailHelp"> -->
                 <input type="number" class="form-control" aria-describedby="emailHelp" name="edad">
             </div>
             <div class="mb-3">
@@ -75,12 +70,15 @@
             </div>
             <div class="mb-3">
                 <label for="sexo" class="form-label">Sexo</label>
-                <!-- <input type="text" class="form-control" id="control" name="sexo" aria-describedby="emailHelp"> -->
                 <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona" name="sexo">
                 <datalist id="datalistOptions">
                 <option value="Masculino">
                 <option value="Femenino">
 
+            </div>
+            <div class="mb-3">
+              
+                <input type="file" class="form-control" id="img" name="imagen" aria-describedby="emailHelp" accept="image/*">
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
@@ -102,6 +100,7 @@
                         <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Estado_Civil</th>
                         <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Correo</th>
                         <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Sexo</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">foto</th>
                         <th scope="col" style="background-color: #00e2ff; font-weight: bold;"></th>
                     </tr>
                 </thead>
@@ -124,6 +123,7 @@
                         <td><?=$datos->Estado_Civil?></td>
                         <td><?=$datos->Correo?></td>
                         <td><?=$datos->Sexo?></td>
+                        <td><img src='data:image/png;base64,<?=$datos->foto?>'/></td>
                         <td>
                             <a href="modificar_registro.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                             <a href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
