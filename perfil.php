@@ -14,6 +14,13 @@
 </head>
 
 <body>
+    <script>
+        function eliminar(params) {
+            var respuesta=confirm("Deseas Eliminar")
+            return respuesta
+        }
+    </script>
+
     <div>
         <a clas="salir" href="index.php">SALIR</a>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle" width="250 " alt="logo">
@@ -63,6 +70,7 @@
             <div class="mb-3">
                 <label for="estado" class="form-label">Estado civil</label>
                 <input type="text" class="form-control" id="control" name="estado" aria-describedby="emailHelp">
+                            
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -74,6 +82,7 @@
                 <datalist id="datalistOptions">
                 <option value="Masculino">
                 <option value="Femenino">
+                <option value="Binario">
 
             </div>
             <div class="mb-3">
@@ -84,7 +93,7 @@
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
         </form>
 
-        <div class="col-8 p-4">
+        <div class="col-1 p-2">
             <table class="table table-striped">
                 <thead class="bg-info">
                     <tr>
@@ -126,7 +135,7 @@
                         <td><img src='data:image/png;base64,<?=$datos->foto?>'/></td>
                         <td>
                             <a href="modificar_registro.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
-                            <a href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            <a onclick="return eliminar()" href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
 
