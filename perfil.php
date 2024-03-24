@@ -35,21 +35,18 @@
                 <input type="text"  class="form-control" id="control" name="nombres" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-<<<<<<< HEAD
                 <label for="identificacion" class="form-label ">Cedula</label>
-                <input type="text" class="form-control "id="control" name="identificacion" aria-describedby="emailHelp">
+                <input type="text" class="form-control " name="identificacion" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
                 <input type="text" class="form-control"id="control" name="telefono" aria-describedby="emailHelp">
-=======
                 <label for="identificacion" class="form-label">Cedula</label>
                 <input type="number" class="form-control" name="identificacion" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
                 <input type="number" class="form-control" name="telefono" aria-describedby="emailHelp">
->>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
@@ -57,11 +54,8 @@
             </div>
             <div class="mb-3">
                 <label for="edad" class="form-label">Edad</label>
-<<<<<<< HEAD
-                <input type="text" class="form-control" id="control" name="edad" aria-describedby="emailHelp">
-=======
-                <input type="number" class="form-control" aria-describedby="emailHelp">
->>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
+                <!-- <input type="text" class="form-control" id="control" name="edad" aria-describedby="emailHelp"> -->
+                <input type="number" class="form-control" aria-describedby="emailHelp" name="edad">
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Fecha de Nacimiento </label>
@@ -81,14 +75,12 @@
             </div>
             <div class="mb-3">
                 <label for="sexo" class="form-label">Sexo</label>
-<<<<<<< HEAD
-                <input type="text" class="form-control" id="control" name="sexo" aria-describedby="emailHelp">
-=======
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona">
+                <!-- <input type="text" class="form-control" id="control" name="sexo" aria-describedby="emailHelp"> -->
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona" name="sexo">
                 <datalist id="datalistOptions">
                 <option value="Masculino">
                 <option value="Femenino">
->>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
+
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>

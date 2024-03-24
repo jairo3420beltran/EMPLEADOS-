@@ -141,11 +141,8 @@ h1 {
     color: rgb(233, 146, 233);
     font-size: 18px;
 }
-#control{
-    border-radius: 20px;
-    background-color: beige;
 
-}
+
 
 @media(max-width:991px){
     body{
