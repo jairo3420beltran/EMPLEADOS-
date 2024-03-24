@@ -38,9 +38,15 @@
                 <label for="identificacion" class="form-label ">Cedula</label>
                 <input type="text" class="form-control " name="identificacion" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
                 <input type="text" class="form-control"id="control" name="telefono" aria-describedby="emailHelp">
+                <label for="identificacion" class="form-label">Cedula</label>
+                <input type="number" class="form-control" name="identificacion" >
+            </div> -->
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="number" class="form-control" name="telefono" >
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
