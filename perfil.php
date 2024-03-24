@@ -35,12 +35,21 @@
                 <input type="text"  class="form-control" id="control" name="nombres" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
+<<<<<<< HEAD
                 <label for="identificacion" class="form-label ">Cedula</label>
                 <input type="text" class="form-control "id="control" name="identificacion" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
                 <input type="text" class="form-control"id="control" name="telefono" aria-describedby="emailHelp">
+=======
+                <label for="identificacion" class="form-label">Cedula</label>
+                <input type="number" class="form-control" name="identificacion" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="number" class="form-control" name="telefono" aria-describedby="emailHelp">
+>>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
@@ -48,7 +57,11 @@
             </div>
             <div class="mb-3">
                 <label for="edad" class="form-label">Edad</label>
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="control" name="edad" aria-describedby="emailHelp">
+=======
+                <input type="number" class="form-control" aria-describedby="emailHelp">
+>>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Fecha de Nacimiento </label>
@@ -68,29 +81,36 @@
             </div>
             <div class="mb-3">
                 <label for="sexo" class="form-label">Sexo</label>
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="control" name="sexo" aria-describedby="emailHelp">
+=======
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona">
+                <datalist id="datalistOptions">
+                <option value="Masculino">
+                <option value="Femenino">
+>>>>>>> ab6d2613d4052e0a838a085bff022081aae04b2b
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
         </form>
 
         <div class="col-8 p-4">
-            <table class="table">
+            <table class="table table-striped">
                 <thead class="bg-info">
                     <tr>
                         
-                        <th scope="col">id_usuario</th>
-                        <th scope="col">nombres</th>
-                        <th scope="col">Cedula</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Fecha_Nacimiento</th>
-                        <th scope="col">Cargo</th>
-                        <th scope="col">Estado_Civil</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Sexo</th>
-                        <th scope="col"></th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">id_usuario</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">nombres</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Cedula</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Telefono</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Direccion</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Edad</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Fecha_Nacimiento</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Cargo</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Estado_Civil</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Correo</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;">Sexo</th>
+                        <th scope="col" style="background-color: #00e2ff; font-weight: bold;"></th>
                     </tr>
                 </thead>
                 <tbody>

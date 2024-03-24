@@ -39,11 +39,11 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             </div>
             <div class='mb-3'>
                 <label for='identificacion' class='form-label'>Cedula</label>
-                <input type='text' class='form-control' name='identificacion' aria-describedby='emailHelp'value='$datos->Cedula'>
+                <input type='number' class='form-control' name='identificacion' aria-describedby='emailHelp'value='$datos->Cedula'>
             </div>
             <div class='mb-3'>
                 <label for='telefono' class='form-label'>Teléfono</label>
-                <input type='text' class='form-control' name='telefono' aria-describedby='emailHelp'value='$datos->Telefono'>
+                <input type='number' class='form-control' name='telefono' aria-describedby='emailHelp'value='$datos->Telefono'>
             </div>
             <div class='mb-3'>
                 <label for='direccion' class='form-label'>Direccion</label>
@@ -51,7 +51,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             </div>
             <div class='mb-3'>
                 <label for='edad' class='form-label'>Edad</label>
-                <input type='text' class='form-control' name='edad' aria-describedby='emailHelp'value='$datos->Edad'>
+                <input type='number' class='form-control' name='edad' aria-describedby='emailHelp'value='$datos->Edad'>
             </div>
             <div class='mb-3'>
                 <label for='nombres' class='form-label'>Fecha de Nacimiento </label>
@@ -80,7 +80,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
 
             
 
-            <button type="submit" class="btn btn-primary" name="btnmodificar" value="OK">REGISTRAR</button>
+            <button type="submit" class="btn btn-primary" name="btnmodificar" value="OK">MODIFICAR</button>
         </form>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
