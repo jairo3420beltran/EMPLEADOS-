@@ -46,7 +46,7 @@
             </div> -->
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="number" class="form-control" name="telefono" >
+                <input type="number" class="form-control" name="telefono" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
