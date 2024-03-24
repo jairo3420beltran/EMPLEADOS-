@@ -15,32 +15,37 @@ include("database.php");
 
 </head>
 <body>
-<form class="formulario" method="post">
+<form class="formulario" method="post" action="validacion_ingreso.php">
         <div class="contenedor">
             <img class="logo" src="img/logo2.jpg" alt="logo">
             <h1>Ordenadores HOP</h1>
 
         </div>
         <h2>Ingreso</h1>
-
-
-            <?php
-
-            ?>
-
             <div class="usuario">
                 <label class="label" for="">Usuario</label>
                 <input type="tex" name="usuario" placeholder="Ingrese un usuario ">
+                <?php
+                $hasError=$_GET["error"];
+                if($hasError == 'true'){
+                    echo "<p class='error'>El usuario es incorrecto</p>";
+                }
+                ?>
             </div>
             <div class="usuario">
                 <label class="label" for="">Contraseña</label>
                 <input type="password" name="contraseña" placeholder="Ingrese su contraseña">
+                <?php
+                $hasError=$_GET["error"];
+                if($hasError == 'true'){
+                    echo "<p class='error'>La contraseña es incorrecto</p>";
+                }
+                ?>
             </div>
            
 
             <input class="boton" type="submit" value="INGRESAR" name="ingreso">
             <a class="btn" href="registro.php">REGISTRAR</a>
-            
     </form>
    
     
