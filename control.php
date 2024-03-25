@@ -1,17 +1,16 @@
 <?php
 include ("database.php");
 
-function response($code=200, $status="", $message="") 
+function response($code = 200, $status = "", $message = "")
 {
- http_response_code($code);
- if( !empty($status) && !empty($message) )
-    {
-     $response = array("status" => $status ,"message"=>$message);  
-     echo json_encode($response,JSON_PRETTY_PRINT);    
-     } 
+  http_response_code($code);
+  if (!empty ($status) && !empty ($message)) {
+    $response = array("status" => $status, "message" => $message);
+    echo json_encode($response, JSON_PRETTY_PRINT);
+  }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $usuario = $_POST["usuario"];
   $contraseña = $_POST["contraseña"];
   $confirmacion = $_POST["confirmacion"];
@@ -29,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $error_contraseña = "La contraseña debe tener al menos {$longitud_minima} caracteres.";
   }
 
-  if (strcmp($contraseña,$confirmacion) != 0) {
+  if (strcmp($contraseña, $confirmacion) != 0) {
     $error_match_contraseña = "La contraseña no es igual";
 
   }
 
-  if(strlen($usuario) <= 4){
+  if (strlen($usuario) <= 4) {
     $error_usuario = "El usuario debe tener  minimo 4 caracteres";
   }
 
@@ -45,16 +44,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     if ($resultado) {
-    $res= array("password" => $error_contraseña ,"user"=>$error_usuario,"match_password"=>$error_match_contraseña);
-      response(200,"good",json_encode($res,JSON_PRETTY_PRINT));
+      header('Location: perfil.php');
+
     } else {
-response(400,"error","imposible");
+      header('Location: registro.php?error=true');
     }
   } else {
-    $res= array("password" => $error_contraseña ,"user"=>$error_usuario,"match_password"=>$error_match_contraseña);
-response(400,"error",json_encode($res,JSON_PRETTY_PRINT));
+    header('Location: registro.php?error=true');
+
   }
 } else {
-  response(400);
+  header('Location: registro.php?error=true');
 }
 ?>
