@@ -29,10 +29,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             <h2 class="text-center text-secondary">Modificar perfil de usuario</h2>
             <input type="hidden" name="id_usuario" value="<?= $_GET["id_usuario"]?>"
             <?php
-<<<<<<< HEAD
         include "modificar.php";
-=======
->>>>>>> 633aa736b3da35983587f06a9cc5de8efddeced3
         while ($datos = $sql->fetch_object()) {
             if (isset($_GET['id_usuario'])) {
                 
