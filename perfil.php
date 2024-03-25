@@ -22,7 +22,6 @@
     </script>
 
     <div>
-        <a clas="salir" href="index.php">SALIR</a>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle" width="250 " alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto">Ordenadores HOP </h1>
 
@@ -91,6 +90,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
+                    <a clas="salir" href="index.php">SALIR</a>
         </form>
 
         <div class="col-1 p-2">
