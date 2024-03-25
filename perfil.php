@@ -29,8 +29,8 @@
 
 
     <div class="container-fluid row">
-        <form class="col-4" method="POST" enctype="multipart/form-data">
-            <h2 class="text-center text-secondary">Perfil de usuario</h2>
+        <form class="col-5" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center text-secondary">Perfil de Usuario</h2>
 
                 <?php
                     include("controlPerfil.php");
@@ -39,45 +39,45 @@
 
             <div class="mb-3">
                 <label for="nombres" class="form-label" >Nombres y Apellidos</label>
-                <input type="text"  class="form-control" id="control" name="nombres" aria-describedby="emailHelp">
+                <input type="text" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 3px; border-left:3px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, name="nombres" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="identificacion" class="form-label ">Cedula</label>
-                <input type="text" class="form-control " name="identificacion" aria-describedby="emailHelp">
+                <input type="text" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, name="identificacion" aria-describedby="emailHelp">
             </div>
           
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="number" class="form-control" name="telefono" aria-describedby="emailHelp">
+                <input type="number" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, name="telefono" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
-                <input type="text" class="form-control"id="control" name="address" aria-describedby="emailHelp">
+                <input type="text" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, id="control" name="address" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="edad" class="form-label">Edad</label>
-                <input type="number" class="form-control" aria-describedby="emailHelp" name="edad">
+                <input type="number" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, aria-describedby="emailHelp" name="edad">
             </div>
             <div class="mb-3">
                 <label for="nombres" class="form-label">Fecha de Nacimiento </label>
-                <input type="date" class="form-control" id="control" name="fecha" aria-describedby="emailHelp">
+                <input type="date" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, id="control" name="fecha" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo</label>
-                <input type="text" class="form-control" id="control" name="cargo" aria-describedby="emailHelp">
+                <input type="text" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, id="control" name="cargo" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="estado" class="form-label">Estado civil</label>
-                <input type="text" class="form-control" id="control" name="estado" aria-describedby="emailHelp">
+                <input type="text" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, id="control" name="estado" aria-describedby="emailHelp">
                             
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="control" name="correo" aria-describedby="emailHelp">
+                <input type="email" class="form-control" style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, id="control" name="correo" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="sexo" class="form-label">Sexo</label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona" name="sexo">
+                <input style="background: #f6f5f7; font-weight: bold; padding: 4px; border-left:4px solid #0c92ac; border-top-left-radius:13px; border-bottom-left-radius:10px, class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleciona" name="sexo">
                 <datalist id="datalistOptions">
                 <option value="Masculino">
                 <option value="Femenino">
