@@ -1,24 +1,20 @@
-<?php
-include "database.php";
-$id_usuario = $_GET["id_usuario"];
-$sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Registro</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
+<<<<<<< HEAD
     <div>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle mx-auto d-block" width="250" alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto m-auto">Ordenadores HOP </h1>
@@ -87,14 +83,72 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
         else {
             header('Location: perfil.php');
     
-        }
-    }
-        ?>
-            <button type="submit" class="btn btn-primary" name="btnmodificar" value="OK">MODIFICAR</button>
-        </form>
+    <form class="formulario" id="formulario">
+        
+        <div class="contenedor">
+            <img class="logo" src="img/logo2.jpg" alt="logo">
+            <h1>Ordenadores HOP</h1>
+        </div>
+        <h2>Registro</h1>
+            <div class="usuario">
+                <label class="label" for="">Usuario</label>
+                <input type="text" name="usuario" id="usuario" placeholder="Ingrese un usuario ">
+                <p id="error_usuario"></p>
+            </div>
+            <div class="usuario">
+                <label class="label" for="">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+                <p id="error_password"></p>
+            </div>
+            <div class="usuario">
+                <label class="label" for="">Confirmar_contraseña</label>
+                <input type="password" name="confirmacion" id="confirmar" placeholder="Confirrme su contraseña">
+                <p id="error_confirmar"></p>
+            </div>
+            <button class$btn-border-radius: 1rem; class="boton" id="submit" type="button">registrar</button>
+            <a class="btn" href="index.php">Ingresar</a>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>     
+    </form>
+    <script defer>
+        const boton = document.querySelector("#submit")
+
+        boton.addEventListener('click', async () => {
+            const formData = new FormData()
+            const user = document.querySelector("#usuario")
+            const userError = document.querySelector("#error_usuario")
+
+            const pass = document.querySelector("#contraseña")
+            const passError = document.querySelector("#error_password")
+
+            const confirm = document.querySelector("#confirmar")
+            const confirmError = document.querySelector("#error_confirmar")
+
+            const salir = document.querySelector("#salir")
+
+
+
+            formData.append("usuario", user.value)
+            formData.append("contraseña", pass.value)
+            formData.append("confirmacion", confirm.value)
+
+
+            const response = await fetch('/EMPLEADOS-/control.php', {
+                body: formData,
+                method: 'POST'
+            }).then(e => e.json())
+
+            const errores = await JSON.parse(response.message)
+
+                passError.textContent=errores.password ?? ''
+                userError.textContent=errores.user ?? ''
+                confirmError.textContent=errores.match_password ?? ''
+
+                if(response.status === "good"){
+                    salir.classList.add("display")                   
+                }
+        })
+
+    </script>
 </body>
+
 </html>
