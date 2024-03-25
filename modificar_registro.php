@@ -29,8 +29,9 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
 <body>
 <form class="col-4 p-10 m-auto" method="POST">
             <h2 class="text-center text-secondary">Modificar perfil de usuario</h2>
+            <input type="hidden" name="id_usuario" value="<?= $_GET["id_usuario"]?>"
             <?php
-        
+        include "modificar.php";
         while ($datos = $sql->fetch_object()) {
             echo "
              <div class='mb-3'>
