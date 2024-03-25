@@ -25,7 +25,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
     </div>
 </head>
 <body>
-<form class="col-4 p-10 m-auto" method="POST" action="actualizar_registro.php">
+<form class="col-4 p-10 m-auto" method="POST" action="actualizar_registro.php"  enctype="multipart/form-data">
             <h2 class="text-center text-secondary">Modificar perfil de usuario</h2>
             <?php
         while ($datos = $sql->fetch_object()) {
@@ -50,35 +50,35 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             </div>
             <div class='mb-3'>
                 <label for='direccion' class='form-label'>Direccion</label>
-                <input type='text' class='form-control' name='address' aria-describedby='emailHelp'value='$datos->Direccion'>
+                <input type='text' class='form-control' name='address' aria-describedby='emailHelp'value='$datos->Direccion' />
             </div>
             <div class='mb-3'>
                 <label for='edad' class='form-label'>Edad</label>
-                <input type='number' class='form-control' name='edad' aria-describedby='emailHelp'value='$datos->Edad'>
+                <input type='number' class='form-control' name='edad' aria-describedby='emailHelp'value='$datos->Edad' />
             </div>
             <div class='mb-3'>
                 <label for='nombres' class='form-label'>Fecha de Nacimiento </label>
-                <input type='date' class='form-control' name='fecha' aria-describedby='emailHelp'value='$datos->F_Nacimiento'>
+                <input type='date' class='form-control' name='fecha' aria-describedby='emailHelp'value='$datos->F_Nacimiento'/>
             </div>
             <div class='mb-3'>
                 <label for='cargo' class='form-label'>Cargo</label>
-                <input type='text' class='form-control' name='cargo' aria-describedby='emailHelp'value='$datos->Cargo'>
+                <input type='text' class='form-control' name='cargo' aria-describedby='emailHelp'value='$datos->Cargo'/>
             </div>
             <div class='mb-3'>
                 <label for='estado' class='form-label'>Estado civil</label>
-                <input type='text' class='form-control' name='estado' aria-describedby='emailHelp'value='$datos->Estado_Civil'>
+                <input type='text' class='form-control' name='estado' aria-describedby='emailHelp'value='$datos->Estado_Civil'/>
             </div>
             <div class='mb-3'>
             <label for='email' class='form-label'>Email</label>
-            <input type='email' class='form-control' name='correo' aria-describedby='emailHelp'value='$datos->Correo'>
+            <input type='email' class='form-control' name='correo' aria-describedby='emailHelp'value='$datos->Correo'/>
             </div>
             <div class='mb-3'>
             <label for='sexo' class='form-label'>Sexo</label>
-            <input type='text' class='form-control' name='sexo' aria-describedby='emailHelp'value='$datos->Sexo'>
+            <input type='text' class='form-control' name='sexo' aria-describedby='emailHelp'value='$datos->Sexo'/>
             </div> 
             <div class='mb-3'>
             <img src='data:image/png;base64,$datos->foto'/>
-            <input type='file' class='form-control' id='img' name='imagen' aria-describedby='emailHelp' accept='image/*'>
+            <input type='file' class='form-control' id='img' name='imagen' aria-describedby='emailHelp' accept='image/*' />
             </div> 
             ";
         }
