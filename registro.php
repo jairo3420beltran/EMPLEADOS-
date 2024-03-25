@@ -17,9 +17,7 @@
 </head>
 
 <body>
-    
-    <form class="formulario" id="formulario">
-        
+    <form class="formulario" id="formulario" method="POST" action="control.php">
         <div class="contenedor">
             <img class="logo" src="img/logo2.jpg" alt="logo">
             <h1>Ordenadores HOP</h1>
@@ -28,60 +26,47 @@
             <div class="usuario">
                 <label class="label" for="">Usuario</label>
                 <input type="text" name="usuario" id="usuario" placeholder="Ingrese un usuario ">
+                <?php 
+                   if (isset ($_GET['error'])) {
+                    $hasError = $_GET["error"];
+                    if ($hasError == 'true') {
+                        echo "<p class='error'>Usuario incorrecto</p>";
+
+                    }
+                }
+                    ?>
                 <p id="error_usuario"></p>
             </div>
             <div class="usuario">
                 <label class="label" for="">Contraseña</label>
                 <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
-                <p id="error_password"></p>
+                <?php 
+                   if (isset ($_GET['error'])) {
+                    $hasError = $_GET["error"];
+                    if ($hasError == 'true') {
+                        echo "<p class='error'>Contraseña incorrecto</p>";
+
+                    }
+                }
+                    ?>
             </div>
             <div class="usuario">
                 <label class="label" for="">Confirmar_contraseña</label>
                 <input type="password" name="confirmacion" id="confirmar" placeholder="Confirrme su contraseña">
-                <p id="error_confirmar"></p>
+                <?php 
+                   if (isset ($_GET['error'])) {
+                    $hasError = $_GET["error"];
+                    if ($hasError == 'true') {
+                        echo "<p class='error'>Contraseña incorrecta</p>";
+
+                    }
+                }
+                    ?>
             </div>
-            <button class$btn-border-radius: 1rem; class="boton" id="submit" type="button">registrar</button>
+            <button class="boton" type="submit">registrar</button>
             <a class="btn" href="index.php">Ingresar</a>
 
     </form>
-    <script defer>
-        const boton = document.querySelector("#submit")
-
-        boton.addEventListener('click', async () => {
-            const formData = new FormData()
-            const user = document.querySelector("#usuario")
-            const userError = document.querySelector("#error_usuario")
-
-            const pass = document.querySelector("#contraseña")
-            const passError = document.querySelector("#error_password")
-
-            const confirm = document.querySelector("#confirmar")
-            const confirmError = document.querySelector("#error_confirmar")
-
-            const salir = document.querySelector("#salir")
-
-
-
-            formData.append("usuario", user.value)
-            formData.append("contraseña", pass.value)
-            formData.append("confirmacion", confirm.value)
-
-
-            const response = await fetch('/EMPLEADOS-/control.php', {
-                body: formData,
-                method: 'POST'
-            }).then(e => e.json())
-
-            const errores = await JSON.parse(response.message)
-
-                passError.textContent=errores.password ?? ''
-                userError.textContent=errores.user ?? ''
-                confirmError.textContent=errores.match_password ?? ''
-
-                if(response.status === "good"){
-                    salir.classList.add("display")                   
-                }
-        })
 
     </script>
 </body>
