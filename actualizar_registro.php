@@ -38,6 +38,6 @@ if (
         header("Location: modificar_registro.php?id_usuario=$id");
     }
 } else {
-    header("Location: modificar_registro.php=id_usuario=$id");
+    header("Location: modificar_registro.php?id_usuario=$id");
 }
 ?>
