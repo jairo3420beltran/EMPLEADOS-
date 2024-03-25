@@ -132,7 +132,7 @@
                         <td><?=$datos->Estado_Civil?></td>
                         <td><?=$datos->Correo?></td>
                         <td><?=$datos->Sexo?></td>
-                        <td><img src='data:image/png;base64,<?=$datos->foto?>'/></td>
+                        <td><img src='data:image/png;base64,<?=$datos->foto?>', style="width:150px;height:150px;"/></td>
                         <td>
                             <a href="modificar_registro.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                             <a onclick="return eliminar()" href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
