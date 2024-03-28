@@ -10,7 +10,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="assets/css/perfil.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script>
@@ -20,6 +20,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
 
 <body>
     <div>
+        <a class="btn-exit" href="perfil.php">SALIR</a>
         <img src="img/logo2.jpg" class="img-thumbnail rounded-circle mx-auto d-block" width="250" alt="logo">
         <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto m-auto">Ordenadores HOP </h1>
     </div>

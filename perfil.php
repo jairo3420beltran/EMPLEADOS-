@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-
+<link rel="stylesheet" href="assets/css/perfil.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/80bb8b53ab.js" crossorigin="anonymous"></script>
-
 
 </head>
 
@@ -21,9 +20,12 @@
         }
     </script>
 
-    <div>
-        <img src="img/logo2.jpg" class="img-thumbnail rounded-circle" width="250 " alt="logo">
-        <h1 class="col-12 col-md-12 text-center d-none d-md-block mr-auto">Ordenadores HOP </h1>
+    <div class="header">
+        <div class="col-5 content">
+            <a href="index.php" class="btn-salir">SALIR</a>
+            <img src="img/logo2.jpg" class="img-thumbnail rounded-circle mx-auto " width="250 " alt="logo">
+        </div>
+        <h1 class="">Ordenadores HOP </h1>
 
     </div>
 
@@ -90,7 +92,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="OK">REGISTRAR</button>
-                    <a clas="salir" href="index.php">SALIR</a>
+                    <a href="index.php">SALIR</a>
         </form>
 
         <div class="col-1 p-2">
@@ -132,7 +134,7 @@
                         <td><?=$datos->Estado_Civil?></td>
                         <td><?=$datos->Correo?></td>
                         <td><?=$datos->Sexo?></td>
-                        <td><img src='data:image/png;base64,<?=$datos->foto?>', style="width:150px;height:150px;"/></td>
+                        <td><img src='data:image/png;base64,<?=$datos->foto?>', style="width:150px;height:150px;object-fit: cover; border-radius: 50%;"/></td>
                         <td>
                             <a href="modificar_registro.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                             <a onclick="return eliminar()" href="eliminar.php?id_usuario=<?=$datos->id_usuario?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
