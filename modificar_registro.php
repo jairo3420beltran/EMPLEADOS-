@@ -80,6 +80,7 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             <div class='mb-3'>
             <img src='data:image/png;base64,$datos->foto'/>
             <input type='file' class='form-control' id='img' name='imagen' aria-describedby='emailHelp' accept='image/*' />
+            
             </div> 
             ";
         }
