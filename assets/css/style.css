@@ -3,6 +3,13 @@
     padding: 0;
 
 }
+.exit{
+    position: absolute;
+    top: 3em;
+    left: 0;
+    width: 30em;
+    height: 20em;
+}
 
 body {
     box-sizing: border-box;
@@ -70,9 +77,17 @@ input::placeholder {
     align-items: center;
     /* Centramos verticalmente los elementos */
 }
+.logo1{
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    left: 20px;
+    top: 50%;
+    border-radius: 50%;
+}
 
 .logo {
-
+   
     height: 150px;
     width: 150px;
     display: inline-block;
