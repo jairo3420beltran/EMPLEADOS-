@@ -1,7 +1,13 @@
 <?php
 include "database.php";
-$id_usuario = $_GET["id_usuario"];
-$sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
+if(isset($_GET["cedula"])){
+    $cedula = $_GET["cedula"];
+    $sql=$conex->query("select * from perfil where Cedula=$cedula");
+}
+ else {
+    $id_usuario = $_GET["id_usuario"];
+    $sql=$conex->query("select * from perfil where id_usuario=$id_usuario");
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,13 +36,14 @@ $sql=$conex->query("select * from perfil where id_usuario=$id_usuario")
             <h2 class="text-center text-secondary">Modificar perfil de usuario</h2>
             <?php
         while ($datos = $sql->fetch_object()) {
-            if (isset($_GET['id_usuario'])) {
+                $id=$datos->id_usuario;
+
+            if (!empty($id)) {
                 
-                $id=$_GET['id_usuario'];
                 echo "
             <div style='display:none;'>
-            <input type='text' class='form-control' name='id' aria-describedby='emailHelp' value='$id'>
-        </div>
+                <input type='text' class='form-control' name='id' aria-describedby='emailHelp' value='$id'>
+            </div>
              <div class='mb-3'>
                 <label for='nombres' class='form-label'>Nombres y Apellidos</label>
                 <input type='text' class='form-control' name='nombres' aria-describedby='emailHelp' value='$datos->nombres'>

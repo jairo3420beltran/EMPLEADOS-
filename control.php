@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($resultado) {
-      header('Location: perfil.php');
+      header('Location: aplicaciones.php');
 
     } else {
       header('Location: registro.php?error=true');

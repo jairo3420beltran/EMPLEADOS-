@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = mysqli_query($conex, $query);
     
     if (mysqli_num_rows($resultado) > 0) {
-        header('Location: perfil.php');
+        header('Location: aplicaciones.php');
     } else {
         header('Location: index.php?error=true');
     }
