@@ -25,7 +25,7 @@
             <div>
                 <a class="ancla" href="perfil.php">REGISTRAR</a>
 
-                <a class="ancla" href="buscar.php">EDITAR</a>
+                <a class="ancla" href="perfil.php">EDITAR</a>
 
                 <a class="ancla" href="perfil.php">ELIMINAR</a>
 
